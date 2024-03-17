@@ -80,21 +80,35 @@ saveButton.addEventListener("click", (event) => {
     })
 
         .then((response) => {
+
             if (response.ok) {
-                alert("Inserzione aggiunta con successo")
+                if (eventId) {
+                    alert("Inserzione modificata con successo")
+                } else {
+                    alert("Inserzione aggiunta con successo")
+                }
                 inputName.value = ""
                 inputDescription.value = ""
                 inputBrand.value = ""
                 inputImageURL.value = ""
                 inputPrice.value = ""
             } else {
-                alert("Errore nel salvataggio")
-                throw new Error("Errore salvataggio")
+
+                return response.json()
+                    .then((errorData) => {
+                        throw new Error(errorData.message)
+                    })
+
             }
+        })
+        .then(() => {
+
+            window.location.href = "http://127.0.0.1:5500/details.html?eventId=" + eventId
         })
 
         .catch((err) => {
-            console.log("Questo è l'errore: ", err)
+            alert("ERRORE, IL BACK-END DICE --> " + err)
+            console.log(err)
         })
 
 })

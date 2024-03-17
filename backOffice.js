@@ -11,7 +11,6 @@ const addressBarContent = new URLSearchParams(location.search)
 const eventId = addressBarContent.get("eventId")
 console.log(eventId)
 
-
 if (eventId) {
 
     fetch("https://striveschool-api.herokuapp.com/api/product/" + eventId, {
@@ -67,8 +66,6 @@ saveButton.addEventListener("click", (event) => {
         price: inputPrice.value
     }
 
-    console.log(newObj)
-
 
     fetch(urlGeneric, {
         method: methodUsed,
@@ -86,6 +83,7 @@ saveButton.addEventListener("click", (event) => {
                     alert("Inserzione modificata con successo")
                 } else {
                     alert("Inserzione aggiunta con successo")
+                    return response.json()
                 }
                 inputName.value = ""
                 inputDescription.value = ""
@@ -101,9 +99,10 @@ saveButton.addEventListener("click", (event) => {
 
             }
         })
-        .then(() => {
+        .then((data) => {
+            console.log(data)
 
-            window.location.href = "http://127.0.0.1:5500/details.html?eventId=" + eventId
+            window.location.href = "http://127.0.0.1:5500/details.html?eventId=" + (eventId != null ? eventId : data._id)
         })
 
         .catch((err) => {

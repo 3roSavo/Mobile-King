@@ -1,0 +1,1 @@
+Semplice progetto dove ho testato le CRUD utilizzando un server messo a disposizione da Epicode School, focalizzazione sulla creazione, lettura, modifica ed eliminazione di inserzioni di prodotti.

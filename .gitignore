@@ -1,8 +1,3 @@
-# Ignora i file di configurazione locali
-config.json
+# Ignora la cartella con il token
+config.js
 
-# Ignora i file di log
-*.log
-
-# Ignora le directory node_modules
-node_modules/

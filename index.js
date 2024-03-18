@@ -1,8 +1,6 @@
 const row = document.getElementsByClassName("row")[1] // perchè ho creato un altro div con classe row
 const spinner = document.getElementById('spinner')
 
-
-
 const renderProducts = (array) => {
 
     array.forEach((obj) => {
@@ -32,13 +30,12 @@ const hideSpinner = function () {
 }
 
 
-
 const getProducts = () => {
 
     fetch("https://striveschool-api.herokuapp.com/api/product/", {
         method: "GET",
         headers: {
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY3MTdhNDY0NGYxYjAwMTk1MmRmNGMiLCJpYXQiOjE3MTA2OTIyNjAsImV4cCI6MTcxMTkwMTg2MH0.07uMRv-w4wVmhBV6H_vzxboffrY76ZhmtT-CgDHbAuE"
+            "Authorization": TOKEN // ho semplicemente importato config.js nell'html e richiamata la variabile
         }
     })
 

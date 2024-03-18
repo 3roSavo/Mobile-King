@@ -71,7 +71,7 @@ saveButton.addEventListener("click", (event) => {
         method: methodUsed,
         body: JSON.stringify(newObj),
         headers: {
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWY3MTdhNDY0NGYxYjAwMTk1MmRmNGMiLCJpYXQiOjE3MTA2OTIyNjAsImV4cCI6MTcxMTkwMTg2MH0.07uMRv-w4wVmhBV6H_vzxboffrY76ZhmtT-CgDHbAuE",
+            "Authorization": TOKEN,
             "content-Type": "application/json"
         }
     })

@@ -1,0 +1,8 @@
+# Ignora i file di configurazione locali
+config.json
+
+# Ignora i file di log
+*.log
+
+# Ignora le directory node_modules
+node_modules/
